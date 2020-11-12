@@ -23,14 +23,19 @@ This script will:
 - abort everything if your somehow select c:\ as backup drive (how could this ever happen ;) )
 - show your mum the backup drive she selected and asks her to confirm this choice
 - start the backup
-   - loop over all lines in your csv file and start a robocopy to mirror all ORIGINAL paths to the BACKUP paths.
+   - loop over all lines in your csv file and
+   - start a robocopy to mirror all ORIGINAL paths to the BACKUP paths.
 
 ### Example
-Let's say your mum is using the csv file from the above example and she selects the drive E:\ as her backup drive. In this case the powershell script will first mirror the whole directory at "C:\Users\Mum\Desktop" into "E:\Desktop". Mirroring in this case means that the two directories "C:\Users\Mum\Desktop" and "Desktop" will look completey identical after the backup is done. This means:
+Let's say your mum is using the csv file from the above example and she selects the drive E:\ as her backup drive. In this case the powershell script will first mirror the whole directory at "C:\Users\Mum\Desktop" into "E:\Desktop". Mirroring in this case means that the two directories "C:\Users\Mum\Desktop" and "Desktop" will look completey identical after the backup is done.
+
+This means:
 1. If you added some files to "C:\Users\Mum\Desktop" these files will be added at "E:\Desktop"
 2. If you changed some files in "C:\Users\Mum\Desktop" these files will be changed in "E:\Desktop"
 3. If you removed some files from "C:\Users\Mum\Desktop" these files will be removed from "E:\Desktop"
+
 **AND**
+
 4. If you added, changed or removed some files at "E:\Desktop" but not at "C:\Users\Mum\Desktop" all these changes will be overwritten so that both files are completely identical!!!
 
 ### **A word of warning**
